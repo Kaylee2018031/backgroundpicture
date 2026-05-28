@@ -1,54 +1,45 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Warm Bookstore Background Generator</title>
+    <title>AI Image Generator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="app-shell">
+    <main class="container">
       <section class="panel">
-        <header class="panel__header">
-          <p class="eyebrow">Realistic Photo Style</p>
-          <h1>따뜻한 서점 배경 이미지 생성기</h1>
-          <p class="subtitle">
-            아늑한 서점과 카페 분위기를 사실적인 사진 스타일로 생성해 보세요.
-          </p>
-        </header>
+        <p class="eyebrow">Creative Tools</p>
+        <h1>Simple AI Image Generator</h1>
+        <p class="subtitle">Type a prompt and generate unique AI images instantly.</p>
 
         <form id="prompt-form" class="prompt-form" autocomplete="off">
-          <label for="prompt" class="prompt-form__label">Prompt</label>
+          <label for="prompt">Image Prompt</label>
           <textarea
             id="prompt"
             name="prompt"
             rows="4"
-            placeholder="예: warm cinematic bookstore café interior, wooden shelves, afternoon sun rays, shallow depth of field, realistic photography"
+            placeholder="Example: futuristic city skyline at sunset, cinematic lighting, ultra detailed"
             required
           ></textarea>
-          <button type="submit" class="generate-btn">Generate Image</button>
+          <button id="generate-btn" type="submit">Generate Image</button>
         </form>
 
-        <p class="hint">
-          팁: 조명, 렌즈 느낌, 시간대(아침/노을), 질감(목재/책장)까지 적으면 더 사실적인 결과를 얻을 수 있어요.
-        </p>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
       </section>
 
-      <section class="preview" aria-live="polite">
-        <div class="preview__overlay"></div>
-        <div class="preview__content">
-          <p class="preview__label">Generated preview prompt</p>
-          <h2 id="preview-title">Warm bookstore & café atmosphere</h2>
-          <p id="preview-text">
-            amber lighting, handcrafted wooden shelves, steaming coffee cups, candid realism
-          </p>
+      <section class="gallery-section">
+        <div class="gallery-header">
+          <h2>Image Gallery</h2>
+          <p>Your latest generated images appear here.</p>
         </div>
+        <div id="gallery" class="gallery"></div>
       </section>
     </main>
 
